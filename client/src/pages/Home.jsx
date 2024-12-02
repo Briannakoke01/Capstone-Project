@@ -4,7 +4,7 @@ import "./Home.css";
 import { Stage, Layer, Image, Text } from "react-konva";
 import MemeGallery from "../components/memesGallery";
 const loader = "/loader5.gif";
-
+const API_BASE_URL=process.env.REACT_APP_API_BASE_URL 
 const MemeGenerator = () => {
   const [topText, setTopText] = useState("");
   const [bottomText, setBottomText] = useState("");
@@ -46,11 +46,10 @@ const MemeGenerator = () => {
 
   // Fetch paginated memes
   const getMemesData = async (page = 1) => {
-    console.log("Called")
     try {
       setShowLoader(true);
       const response = await axios.get(
-        `${process.env.REACT_APP_API_BASE_URL}/get-memes?page=${page}&limit=50`
+        `${API_BASE_URL}/get-memes?page=${page}&limit=50`
       );
       setMemeData(response.data.memes);
       setTotalPages(response.data.totalPages);
@@ -184,6 +183,7 @@ const MemeGenerator = () => {
               value={topText}
               onChange={(e) => setTopText(e.target.value)}
               className="text-input"
+              id="top-text"
             />
             <input
               type="text"
@@ -191,6 +191,7 @@ const MemeGenerator = () => {
               value={bottomText}
               onChange={(e) => setBottomText(e.target.value)}
               className="text-input"
+              id="bottom-text"
             />
             <div className="button-container">
               <button className="generate-button" onClick={handleAddText}>
