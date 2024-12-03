@@ -29,17 +29,28 @@ Our website is a Meme Generator that lets you create custom memes easily. You ca
    1. Click on E2E Testing and then select a browser of your choice.
    2. Click on Start E2E Testing.
    3. Then, click on any test case to run it and check the results.
-   You can also run the tests automatically by using the following command after completing the initial setup:
    
-   ```bash
-   npx cypress run --headed memeGenerator.cy.js
+
+   You can also run the tests automatically by using the following command after completing the initial setup
+   1. Test to check Image upload functionality
+
+   ```bash   
+   npx cypress run --headed checkUploadImage.cy.js.cy.js
    ```
    
-   Or, for a different test:
+   2. Test to Check Fields Validity
    
    ```bash   
    npx cypress run --headed checkValidity.cy.js
    ```
+
+   3. Test to check Generate Meme
+   ```bash
+   npx cypress run --headed memeGenerator.cy.js
+   ```
+
+  
+      
 
 ## User Workflow of Website
    1. Enter top text
