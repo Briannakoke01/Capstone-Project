@@ -13,7 +13,33 @@ Our website is a Meme Generator that lets you create custom memes easily. You ca
 4. **Download Meme:** Once your meme is generated, you can download the image for future use or sharing.
 
 ## Test Cases
-   Basic test case in written in client/test-cases
+   First, run this command in the terminal to install Cypress globally:
+
+   ```bash
+   npm install -g cypress
+   ```
+
+   Then, open the terminal in your client folder and run the following command:
+
+   ```bash
+   npx cypress open
+   ```
+   Once Cypress is open then following the following steps, 
+   
+   1. Click on E2E Testing and then select a browser of your choice.
+   2. Click on Start E2E Testing.
+   3. Then, click on any test case to run it and check the results.
+   You can also run the tests automatically by using the following command after completing the initial setup:
+   
+   ```bash
+   npx cypress run --headed memeGenerator.cy.js
+   ```
+   
+   Or, for a different test:
+   
+   ```bash   
+   npx cypress run --headed checkValidity.cy.js
+   ```
 
 ## User Workflow of Website
    1. Enter top text
@@ -29,7 +55,8 @@ Our website is a Meme Generator that lets you create custom memes easily. You ca
 
 ## Technologies Stacks
    1. Nodejs 
-   3. Reactjs
+   2. Reactjs
+   3. Cypress for unit testing
 
 ## How to Run the Project
 
