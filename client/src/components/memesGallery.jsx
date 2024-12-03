@@ -7,9 +7,9 @@ const MemeGallery = ({ memeImage, memedata, handleMemeClick, handlePageClick, to
     <div style={{ display: "flex", flexDirection: "column" }}>
       <div>
         <div className="row">
-          <h1>Create Your Own Meme</h1>
+          <h1 className="create-meme-title">Create Your Own Meme</h1>
           <hr />
-          <div className="col-lg-12">
+          <div className="col-lg-12 columns">
             {Array.isArray(memedata) &&
               memedata.map((memeItem, index) => (
                 <a

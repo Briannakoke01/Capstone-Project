@@ -2,7 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import "./Home.css";
 import { Stage, Layer, Image, Text } from "react-konva";
-import MemeGallery from "../components/memesGallery";
+import MemeGallery from "../components/MemesGallery";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 const loader = "/loader5.gif";
 const API_BASE_URL=process.env.REACT_APP_API_BASE_URL 
 const MemeGenerator = () => {
@@ -157,6 +159,7 @@ const MemeGenerator = () => {
   return (
     <>
      {error && <p style={{ color: "red" }}>{error}</p>}
+     <Header/>
      {
       showLoader?
       <div style={{display:'flex', justifyContent:"center", alignItems:"center", height:"100vh"}}>
@@ -184,6 +187,7 @@ const MemeGenerator = () => {
               onChange={(e) => setTopText(e.target.value)}
               className="text-input"
               id="top-text"
+              data-cy="top-text-input"
             />
             <input
               type="text"
@@ -192,12 +196,13 @@ const MemeGenerator = () => {
               onChange={(e) => setBottomText(e.target.value)}
               className="text-input"
               id="bottom-text"
+              data-cy="bottom-text-input"
             />
             <div className="button-container">
-              <button className="generate-button" onClick={handleAddText}>
+              <button className="generate-button" onClick={handleAddText} data-cy="generate-button">
                 Generate
               </button>
-              <button className="download-button" onClick={handleDownload}>
+              <button className="download-button" data-cy="download-button" onClick={handleDownload}>
                 Download
               </button>
             </div>
@@ -271,12 +276,12 @@ const MemeGenerator = () => {
                   </Stage>
                 );
               })()}
-              <button
+              {/* <button
                 className="remove-image-button"
                 onClick={handleRemoveImage}
               >
                 ×
-              </button>
+              </button> */}
             </div>
           )}
         </div>
@@ -292,6 +297,8 @@ const MemeGenerator = () => {
       />
     </div>
      }
+
+     <Footer/>
     </>
   );
 };

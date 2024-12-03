@@ -45,8 +45,9 @@
 
 .input-section .button-container {
   display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
+  justify-content: flex-start;
+  gap: 30px;
+  margin-top: 15px;
 }
 
 .input-section .button-container button {
@@ -58,12 +59,12 @@
 }
 
 .input-section .button-container .generate-button {
-  background-color: #007bff;
+  background-color: #428BCA;
   color: white;
 }
 
 .input-section .button-container .download-button {
-  background-color: #28a745;
+  background-color: #428BCA;
   color: white;
 }
 
@@ -78,6 +79,7 @@
   display: inline-block;
   max-width: 100%; /* Ensure it doesn't overflow on smaller screens */
 }
+
 
 .image-preview-container button {
   position: absolute;
@@ -94,6 +96,13 @@
   justify-content: center;
   align-items: center;
   font-weight: bold;
+}
+
+.create-meme-title{
+  margin-bottom: 26px;
+}
+.columns{
+  margin-top: 20px;
 }
 
 
@@ -139,37 +148,50 @@
   }
 }
 
+/* Style the pagination container */
 .pagination {
   display: flex;
   justify-content: center;
+  align-items: center;
   list-style-type: none;
   padding: 0;
-  margin-bottom: 50px;
+  margin: 20px 0;
 }
 
+/* Style individual pagination buttons */
 .pagination li {
   margin: 0 5px;
-  cursor: pointer;
-  padding: 5px 10px;
-  border: 1px solid #ccc;
+}
+
+/* Style the button links */
+.pagination a, .pagination button {
+  padding: 10px 15px;
+  background-color: white;
+  color: #428BCA;
+  border: 1px solid #dddada;
   border-radius: 5px;
-  padding: 8px 13px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s, transform 0.2s;
+  text-decoration: none; /* Prevent underline on links */
 }
 
-.pagination .active {
-  background-color: #007bff;
+/* Hover effect for the pagination buttons */
+.pagination a:hover, .pagination button:hover {
+  background-color: #f2f2f2;
+  transform: scale(1.1);
+}
+
+/* Style the active page button */
+.pagination .active a, .pagination .active button {
+  background-color: #428BCA;
   color: white;
-  font-weight: bold;
-  border: 1px solid #007bff;
 }
 
-.pagination .disabled {
-  color: #ccc;
+/* Style for disabled buttons (next, previous) */
+.pagination .disabled a, .pagination .disabled button {
+  background-color: #ccc;
+  color: #666;
   cursor: not-allowed;
 }
 
-.pagination .break-me {
-  padding: 5px 10px;
-  color: #888;
-  cursor: default;
-}

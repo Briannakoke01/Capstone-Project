@@ -1,0 +1,46 @@
+# Node modules
+/node_modules/
+/client/node_modules/
+/server/node_modules/
+
+# Package Lock Json
+/package-lock.json
+/client/package-lock.json
+/server/package-lock.json
+
+# Build output
+/client/build/
+/server/build/
+
+# Dependency directories
+/client/.next/
+/server/.next/
+
+# Logs
+*.log
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE and editor files
+.vscode/
+.idea/
+
+# npm/yarn lock files (if you want them ignored, otherwise you can include them)
+npm-debug.log
+yarn-error.log
+
+# Miscellaneous
+*.bak
+*.tmp
+*.swp
+
+# Dist folder (if you have any build/dist folders)
+dist/
