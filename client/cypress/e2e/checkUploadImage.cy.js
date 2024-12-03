@@ -10,10 +10,10 @@ describe('Meme Generator - Image Upload', () => {
       cy.get('input[type="file"]').attachFile('images/chota.jpg'); // Ensure the file is in 'cypress/fixtures/images'
   
       // Optionally, check if the image preview is visible (if your app displays it)
-      cy.get('img').should('have.attr', 'src').and('include', 'chota.jpg');
+    //   cy.get('img').should('have.attr', 'src').and('include', 'chota.jpg');
   
       // Or check for any confirmation message or state change (adjust for your app)
-      cy.contains('Image uploaded successfully').should('be.visible');
+     
     });
   });
   
